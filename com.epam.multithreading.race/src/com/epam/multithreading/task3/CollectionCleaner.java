@@ -23,8 +23,11 @@ public class CollectionCleaner implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			System.out.println("Cleaning ");
-			numbers.clear();
+			synchronized(numbers){				
+				System.out.println("Cleaning ");
+				numbers.clear();
+			}
+
 
 			// Sleep was added just to provide possibility to see output at
 			// console
