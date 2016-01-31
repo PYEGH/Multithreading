@@ -15,8 +15,8 @@ public class SqrtPrinter implements Runnable {
 		int sum = 0;
 
 		while(true){
-			for (int i = 0; i < numbers.size(); i++) {
-				sum += Math.sqrt((Integer) numbers.get(i));
+			for (Object temp: numbers) {
+				sum += Math.sqrt((Integer) temp);
 			}
 			System.out.println("Sqrt " + Math.sqrt(sum));
 			sum = 0;

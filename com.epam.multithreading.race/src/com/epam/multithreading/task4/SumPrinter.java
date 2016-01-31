@@ -16,8 +16,8 @@ public class SumPrinter implements Runnable {
 		int sum = 0;
 
 		while(true){
-			for (int i = 0; i < numbers.size(); i++) {
-				sum += (Integer) numbers.get(i);
+			for (Object temp: numbers) {
+				sum += (Integer) temp;
 			}
 			System.out.println("Sum " + sum);
 			sum = 0;
