@@ -7,6 +7,7 @@ public class Car implements Runnable {
 	private static final long MAX_DISTANCE = 10000;
 	private static final long DISQUALIFICATION_TIME = 1000 * 5; // 5 seconds
 	private static final long BUFFER = 1000;
+	private static final String EMPTY_STRING = "";
 
 	Logger log = Logger.getLogger(getClass());
 
@@ -37,9 +38,9 @@ public class Car implements Runnable {
 			// 'winnerName'.
 			// Only First car will be able to do this.
 			System.out.println(this.name + " finished");
-			if (RaceRunner.getWinnerName().equals("")) {
+			if (EMPTY_STRING.equals(RaceRunner.getWinnerName())) {
 				synchronized (RaceRunner.getWinnerName()) {
-					if (RaceRunner.getWinnerName().equals("")) {
+					if (EMPTY_STRING.equals(RaceRunner.getWinnerName())) {
 						RaceRunner.setWinnerName(this.name);
 					}
 				}
